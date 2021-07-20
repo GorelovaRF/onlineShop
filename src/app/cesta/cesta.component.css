@@ -1,0 +1,12 @@
+.imgCesta{
+    height: 100px;
+    width: 100px;
+    object-fit: contain;   
+}
+
+
+.center {
+    display: flex;
+    margin: auto;
+    text-align: center;
+}

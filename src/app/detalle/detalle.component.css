@@ -1,0 +1,37 @@
+img{
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+    
+}
+
+
+.center {
+    
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    }
+
+
+    .categoria {
+        background-color: green;
+        color: white;
+        border-radius: 10px;
+        width: 100px;
+        height: 25px;
+       text-align: center;
+    }
+
+
+    .price {
+        background-color: gold;
+        color: white;
+        border-radius: 10px;
+        width: 100px;
+       text-align: center;
+    }
+    
+  
+
+    

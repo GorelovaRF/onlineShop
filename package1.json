@@ -1,0 +1,11 @@
+{
+    "name": "AqrMiniProject",
+    "version": "1.0.0",
+    "description": "",
+    "main": "serverRest.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Anastasiia Gorelova",
+    "license": "ISC"
+  }

@@ -1,0 +1,22 @@
+<form [formGroup]="loginForm">
+      <div class="loginForm" >
+            <div >
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" name="email" id="email" formControlName="email" required placeholder="Correo electronico">
+              
+              </div>
+              <div class="form-group">
+                <label for="pass">Password</label>
+                <input  type="password" class="form-control" id="pass" formControlName="pass" required placeholder="Contrasena">
+              </div>
+             
+              <div style="text-align: center; margin-top: 10px;">
+                <button  class="btn btn-primary" (click)="login()" >Iniciar session</button>
+              </div>
+              <div style="text-align: center; margin-top: 5px;" (click)="goHome()">
+                  <p style="color: cornflowerblue;">
+                     Seguir sin cuenta
+                  </p>
+              </div>    
+        </div> 
+  </form>

@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <svg xmlns="http://www.w3.org/2000/svg" style="color: white; margin-left:10px" width="20" height="20" fill="currentColor" class="bi bi-backspace" viewBox="0 0 16 16" (click)="goBack()">
+        <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>
+        <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
+      </svg>
+ 
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/cesta' ]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="color: white;" fill="currentColor" class="bi bi-basket3" viewBox="0 0 16 16">
+                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z"/>
+            </svg>
+        </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="[ '/' ]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="color: white;" class="bi bi-house" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+              <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg>
+          </a>
+          </li>
+        <!-- <li>
+            <a class="nav-link" [routerLink]="[ '/login' ]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" style="color: white;"  fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                 </svg>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </nav>
+
+  <div *ngIf="electrodomestico" style="margin-top: 20px;">
+   
+    <div class="row">
+      <div class="col-sm-12 col-md-3">
+        <img src="{{electrodomestico.imagen}}" >
+      </div>
+      <div class="col-sm-6 col-md-8">
+        <div class="row">
+          <div class="col-10">
+            <p style="font-size: large; font-weight: bold;">{{electrodomestico.nombre}}</p>
+          </div>
+
+          <div class="col-2" *ngIf="electrodomestico.disponibilidad == 1"  (click)="addToBacket(electrodomestico.id)">
+              <button class="btn btn-primary">Añadir
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" style="color: white;" fill="currentColor" class="bi bi-basket3" viewBox="0 0 16 16">
+                  <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z"/>
+              </svg>
+              </button>
+          </div>
+
+          <div class="col-2"  *ngIf="electrodomestico.disponibilidad == 0" >
+            <button class="btn btn-secondary" disabled >No disponible
+            </button>
+        </div>
+        </div>
+        <div class="row" style="margin-bottom: 10px; margin-left: 10px;">
+          <div class="col-12 categoria">
+            <p>{{electrodomestico.categoria}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>{{electrodomestico.descripcion}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-1 center">
+        <p style="font-size: 20px;" class="price"> <b>{{electrodomestico.precio}}</b> $</p>
+      </div>
+      
+    </div>
+
+  </div>
+
+

@@ -1,0 +1,58 @@
+
+
+
+ <table class="body-wrap">
+  <tbody><tr>
+      <td></td>
+      <td class="container" width="600">
+          <div class="content">
+              <table class="main" width="100%" cellpadding="0" cellspacing="0">
+                  <tbody><tr>
+                      <td class="content-wrap aligncenter">
+                          <table width="100%" cellpadding="0" cellspacing="0">
+                              <tbody><tr>
+                                  <td class="content-block">
+                                      <h2>Gracias por la compra!</h2>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td class="content-block">
+                                      <table class="invoice">
+                                          <tbody><tr  *ngIf="usuario" >
+                                              <td><b>{{usuario.nombre}}</b></td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <table class="invoice-items" cellpadding="0" cellspacing="0">
+                                                      <tbody>
+                                                        <tr  *ngFor="let c of cestaLista" >
+                                                          <td>{{c.nombre}}</td>
+                                                          <td class="alignright">{{c.precio}}$</td>
+                                                      </tr>
+                                                      <tr class="total" *ngIf="cartTotal">
+                                                        <td class="alignright" width="80%">Total</td>
+                                                        <td class="alignright">{{cartTotal}}$</td>
+                                                    </tr>
+                                                  </tbody></table>
+                                              </td>
+                                          </tr>
+                                      </tbody></table>
+                                  </td>
+                              </tr>
+                              <tr>
+                                <td class="content-block">
+                                    <a [routerLink]="[ '/' ]">Volver al inicio</a>
+                                </td>
+                            </tr>
+                          </tbody></table>
+                      </td>
+                  </tr>
+              </tbody></table>
+              </div>
+      </td>
+      <td></td>
+  </tr>
+</tbody></table>
+
+
+ 
